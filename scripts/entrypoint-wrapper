@@ -1,0 +1,5 @@
+#! /bin/bash
+
+set -e
+
+exec $DEBBASE_ENTRYPOINT $(cat /var/lib/entrypoint/args)

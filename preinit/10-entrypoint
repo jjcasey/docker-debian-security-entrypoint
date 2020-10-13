@@ -1,0 +1,9 @@
+#! /bin/bash
+
+set -e
+
+if [ -n "$DEBBASE_ENTRYPOINT" ] ; then
+	if [ -s "/var/lib/entrypoint/args" ] || [ -n "$DEBBASE_ENTRYPOINT_NOARGS" ] ; then
+		systemctl enable x-entrypoint
+	fi
+fi

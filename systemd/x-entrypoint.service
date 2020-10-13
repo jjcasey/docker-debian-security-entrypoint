@@ -1,0 +1,12 @@
+[Unit]
+Description=Docker Entrypoint
+After=network.target
+ConditionVirtualization=docker
+
+[Service]
+Type=exec
+EnvironmentFile=/var/lib/entrypoint/env
+ExecStart=/usr/local/bin/entrypoint-wrapper
+
+[Install]
+WantedBy=multi-user.target
